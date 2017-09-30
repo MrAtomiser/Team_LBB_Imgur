@@ -7,5 +7,5 @@ class Image():
     self.image_gallery_id = image_gallery_id
     self.score = score
 
-    print("Image:{} uploaded by {}".format(title,user_id))
+    print("Image:{} successfully uploaded by {}".format(title,user_id))
 
