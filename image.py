@@ -5,7 +5,6 @@ class Image():
     self.tags = tags
     self.image_gallery_id = image_gallery_id
     self.score = score
-
     print("Image: {} successfully uploaded".format(title))
 
 
