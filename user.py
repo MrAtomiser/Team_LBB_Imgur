@@ -11,6 +11,7 @@ class User():
     self.date_created = date_created
     self.profile_image = profile_image
 
+
   def create_image(self):
     user_id = input("Who's uploading the image? ")
     title = input("What's the image title? ")
@@ -30,3 +31,4 @@ dare = User(username = "dare", password = "password", date_created="", profile_i
 charles = User(username = "charles", password = "password", date_created="", profile_image="charlesimage")
 
 sadiq.create_image()
+
