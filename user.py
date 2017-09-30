@@ -5,12 +5,13 @@ from image   import Image
 from image_gallery import ImageGallery
 
 class User():
-  def __init__(self, username, password, date_created, profile_image, my_images = []):
+  def __init__(self, username, password, date_created, profile_image, my_images = [], my_comments = []):
     self.username = username
     self. password = password
     self.date_created = date_created
     self.profile_image = profile_image
     self.my_images = my_images
+    self.my_comments = my_comments
 
 
   def create_image(self):
@@ -43,6 +44,12 @@ class User():
       image.description = new_description
       print("New description is: {}".format(image.description))
 
+  def create_comment(self, date_created, image_id, text, score):
+        new_comment = Comment(date_created, image_id, text, score)
+        self.my_comments.append(new_comment)
+
+
+
 
 
 
@@ -57,6 +64,8 @@ dog_image = Image("dog","this is a cat","cat, internet, other","other gallery","
 rat_image = Image("rat","this is a cat","cat, internet, other","other gallery","7" )
 fish_image = Image("fish","this is a cat","cat, internet, other","other gallery","7" )
 
+
+
 sadiq.my_images.append(cat_image)
 sadiq.my_images.append(dog_image)
 sadiq.my_images.append(rat_image)
@@ -69,5 +78,8 @@ sadiq.read_images()
 sadiq.update_image_title(rat_image,"danger mouse")
 sadiq.update_image_description(rat_image,"this is the new description. Means it was changed!")
 sadiq.read_images()
+
+sadiq.create_comment("abcde", "123ab", "i love things", "4")
+
 
 
