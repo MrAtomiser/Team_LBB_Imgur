@@ -5,4 +5,4 @@ class Comment():
 	    self.text = text
 	    self.score = score
     	
-    	print("New comment created by {}".format(self.user))
+    	# print("New comment created by {}".format(self.user))

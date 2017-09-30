@@ -64,6 +64,11 @@ dog_image = Image("dog","this is a cat","cat, internet, other","other gallery","
 rat_image = Image("rat","this is a cat","cat, internet, other","other gallery","7" )
 fish_image = Image("fish","this is a cat","cat, internet, other","other gallery","7" )
 
+cat_image_comment = Comment("abcde", cat_image, "i love things", "4")
+dog_image_comment = Comment("abcde", dog_image, "i love things", "4")
+rat_image_comment = Comment("abcde", rat_image, "i love things", "4")
+fish_image_comment = Comment("abcde", fish_image, "i love things", "4")
+
 
 
 sadiq.my_images.append(cat_image)
