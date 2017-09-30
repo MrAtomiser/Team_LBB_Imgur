@@ -18,7 +18,7 @@ class User():
     description = input("what the description? ")
     tags = input("What are teh tags? ")
     image_gallery_id = input("What gallery? ")
-    score = input("Score it")
+    score = input("Score it: ")
     new_image = Image(user_id,title,description,tags,image_gallery_id,score)
 
 
