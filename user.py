@@ -24,7 +24,14 @@ class User():
 
   def read_images(self):
     for image in self.my_images:
-      print(image)
+      print(image.title)
+
+  def delete_image(self,image):
+    if image in self.my_images:
+      self.my_images.remove(image)
+      print("{} successfully delete".format(image.title))
+    else:
+      print("image does not exist to begin with")
 
 
 
@@ -37,6 +44,19 @@ abdul = User(username = "abdul", password = "password", date_created="", profile
 dare = User(username = "dare", password = "password", date_created="", profile_image="dareimage",my_images = [])
 charles = User(username = "charles", password = "password", date_created="", profile_image="charlesimage",my_images = [])
 
+test_image = Image("cat","this is a cat","cat, internet, other","other gallery","7" )
+test1_image = Image("dog","this is a cat","cat, internet, other","other gallery","7" )
+test2_image = Image("rat","this is a cat","cat, internet, other","other gallery","7" )
+test3_image = Image("fish","this is a cat","cat, internet, other","other gallery","7" )
+
+sadiq.my_images.append(test_image)
+sadiq.my_images.append(test1_image)
+sadiq.my_images.append(test2_image)
+sadiq.my_images.append(test3_image)
+
 sadiq.create_image()
 sadiq.read_images()
+sadiq.delete_image(test_image)
+sadiq.read_images()
+
 
