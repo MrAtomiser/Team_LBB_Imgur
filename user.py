@@ -1,5 +1,8 @@
 import datetime
-import Comment
+from comment import Comment
+from reply   import Reply
+from image   import Image
+from image_gallery import ImageGallery
 
 class User():
   def __init__(self, username, password, date_created, profile_image):
@@ -14,4 +17,4 @@ abdul = User(username = "abdul", password = "password", date_created="", profile
 dare = User(username = "dare", password = "password", date_created="", profile_image="dareimage")
 charles = User(username = "charles", password = "password", date_created="", profile_image="charlesimage")
 
-comment_1 = Comment(sadiq, "44224", "4234", text="this is comment one", score=5)
+
