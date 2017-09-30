@@ -1,9 +1,5 @@
-import datetime
-
-
-
 class Comment():
-  def __init__(user, date_created, image_id, text, score):
+  def __init__(self,user, date_created, image_id, text, score):
     self.user = user
     self.date_created = date_created
     self.image_id = image_id
