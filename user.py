@@ -33,7 +33,15 @@ class User():
     else:
       print("image does not exist to begin with")
 
+  def update_image_title(self,image,new_title):
+    if image in self.my_images:
+      image.title = new_title
+      print("New title is: {}".format(image.title))
 
+  def update_image_description(self,image,new_description):
+    if image in self.my_images:
+      image.description = new_description
+      print("New description is: {}".format(image.description))
 
 
 
@@ -44,19 +52,22 @@ abdul = User(username = "abdul", password = "password", date_created="", profile
 dare = User(username = "dare", password = "password", date_created="", profile_image="dareimage",my_images = [])
 charles = User(username = "charles", password = "password", date_created="", profile_image="charlesimage",my_images = [])
 
-test_image = Image("cat","this is a cat","cat, internet, other","other gallery","7" )
-test1_image = Image("dog","this is a cat","cat, internet, other","other gallery","7" )
-test2_image = Image("rat","this is a cat","cat, internet, other","other gallery","7" )
-test3_image = Image("fish","this is a cat","cat, internet, other","other gallery","7" )
+cat_image = Image("cat","this is a cat","cat, internet, other","other gallery","7" )
+dog_image = Image("dog","this is a cat","cat, internet, other","other gallery","7" )
+rat_image = Image("rat","this is a cat","cat, internet, other","other gallery","7" )
+fish_image = Image("fish","this is a cat","cat, internet, other","other gallery","7" )
 
-sadiq.my_images.append(test_image)
-sadiq.my_images.append(test1_image)
-sadiq.my_images.append(test2_image)
-sadiq.my_images.append(test3_image)
+sadiq.my_images.append(cat_image)
+sadiq.my_images.append(dog_image)
+sadiq.my_images.append(rat_image)
+sadiq.my_images.append(fish_image)
 
-sadiq.create_image()
+# sadiq.create_image()
 sadiq.read_images()
-sadiq.delete_image(test_image)
+sadiq.delete_image(dog_image)
+sadiq.read_images()
+sadiq.update_image_title(rat_image,"danger mouse")
+sadiq.update_image_description(rat_image,"this is the new description. Means it was changed!")
 sadiq.read_images()
 
 
