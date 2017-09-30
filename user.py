@@ -1,4 +1,4 @@
-import datetime 
+import datetime
 
 class User():
   def __init__(self, username, password, date_created, profile_image):
@@ -12,3 +12,4 @@ tomi = User(username = "tomi", password = "password", date_created="", profile_i
 abdul = User(username = "abdul", password = "password", date_created="", profile_image="abdulimage")
 dare = User(username = "dare", password = "password", date_created="", profile_image="dareimage")
 charles = User(username = "charles", password = "password", date_created="", profile_image="charlesimage")
+
