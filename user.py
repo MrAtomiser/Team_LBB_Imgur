@@ -7,12 +7,14 @@ from image_gallery import ImageGallery
 
 class User():
 
-  def __init__(self, username, password, date_created, profile_image, my_images = []):
+  def __init__(self, username, password, date_created, profile_image, my_images = [], my_comments = []):
+    
     self.username = username
     self. password = password
     self.date_created = date_created
     self.profile_image = profile_image
     self.my_images = my_images
+    self.my_comments = my_comments
 
 
   def create_image(self):
@@ -45,6 +47,10 @@ class User():
       image.description = new_description
       print("New description is: {}".format(image.description))
 
+  def create_comment(self, date_created, image_id, text, score):
+        new_comment = Comment(date_created, image_id, text, score)
+        self.my_comments.append(new_comment)
+        
   def image_search(self, title):
     for image in self.my_images:
       if title in image.title:
@@ -68,6 +74,13 @@ rat_image = Image("rat","this is a cat","cat, internet, other","other gallery")
 fish_image = Image("fish","this is a cat","cat, internet, other","other gallery")
 
 
+cat_image_comment = Comment("abcde", cat_image, "i love things", "4")
+dog_image_comment = Comment("abcde", dog_image, "i love things", "4")
+rat_image_comment = Comment("abcde", rat_image, "i love things", "4")
+fish_image_comment = Comment("abcde", fish_image, "i love things", "4")
+
+
+
 sadiq.my_images.append(cat_image)
 sadiq.my_images.append(dog_image)
 sadiq.my_images.append(rat_image)
@@ -87,5 +100,8 @@ sadiq.image_search(title='cat')
 cat_image.up_vote()
 cat_image.up_vote()
 cat_image.down_vote()
+
+sadiq.create_comment("abcde", "123ab", "i love things", "4")
+
 
 
