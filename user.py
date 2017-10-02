@@ -4,11 +4,8 @@ from reply   import Reply
 from image   import Image
 from image_gallery import ImageGallery
 
-
 class User():
-
   def __init__(self, username, password, date_created, profile_image, my_images = [], my_comments = []):
-    
     self.username = username
     self. password = password
     self.date_created = date_created
@@ -50,12 +47,6 @@ class User():
   def create_comment(self, date_created, image_id, text, score):
         new_comment = Comment(date_created, image_id, text, score)
         self.my_comments.append(new_comment)
-        
-  def image_search(self, title):
-    for image in self.my_images:
-      if title in image.title:
-        print(image)
-
 
 
 
@@ -68,11 +59,10 @@ abdul = User(username = "abdul", password = "password", date_created="", profile
 dare = User(username = "dare", password = "password", date_created="", profile_image="dareimage",my_images = [])
 charles = User(username = "charles", password = "password", date_created="", profile_image="charlesimage",my_images = [])
 
-cat_image = Image("cat","this is a cat","cat, internet, other","other gallery")
-dog_image = Image("dog","this is a cat","cat, internet, other","other gallery")
-rat_image = Image("rat","this is a cat","cat, internet, other","other gallery")
-fish_image = Image("fish","this is a cat","cat, internet, other","other gallery")
-
+cat_image = Image("cat","this is a cat","cat, internet, other","other gallery","7" )
+dog_image = Image("dog","this is a cat","cat, internet, other","other gallery","7" )
+rat_image = Image("rat","this is a cat","cat, internet, other","other gallery","7" )
+fish_image = Image("fish","this is a cat","cat, internet, other","other gallery","7" )
 
 cat_image_comment = Comment("abcde", cat_image, "i love things", "4")
 dog_image_comment = Comment("abcde", dog_image, "i love things", "4")
@@ -93,13 +83,6 @@ sadiq.read_images()
 sadiq.update_image_title(rat_image,"danger mouse")
 sadiq.update_image_description(rat_image,"this is the new description. Means it was changed!")
 sadiq.read_images()
-sadiq.image_search(title='cat')
-
-# cat_image.vote(choice=input('Enter +1 for up_vote and -1 for down_vote: '))
-
-cat_image.up_vote()
-cat_image.up_vote()
-cat_image.down_vote()
 
 sadiq.create_comment("abcde", "123ab", "i love things", "4")
 
